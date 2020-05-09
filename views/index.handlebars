@@ -1,4 +1,4 @@
-<h1>Eat-Da-Burger!</h1>
+{{!-- <h1>Eat-Da-Burger!</h1>
 
 {{!-- list of burgers to devour --}}
 <h2>Burgers to Devour</h2>
@@ -28,4 +28,69 @@
   </div>
   <button type="submit">Submit</button>
   <h2>Enter a Burger you want to eat! Click the "Submit" button.</h2>
-</form>
+</form> --}}
+
+<div class="container" id="main-box">
+    <div class="row">
+        <div class ="col s12 title" id= "title-box">
+            <hr>
+            <h1 id="subtitle">Living life, devouring burgers.</h1>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class= "col s4 container" id="lists">
+          <h3>Burgers to Devour</h3>
+          <div class ="container names" id="not-eaten">
+
+            <ul>
+              {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block showbutton=true}}
+                {{/unless}}
+              {{/each}}
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col s4" id="mid-section">
+            {{!-- <img src="assets/images/jaqen.png" id="jaqen"> --}}
+
+
+            <form class="create-form">
+
+            <div class="form-group">
+                <label for="burger"></label>
+                <input type="text" id="burger" placeholder="Name your burger" name="burger_name">
+            </div>
+
+            <button type="submit">Add a Burger to Devour</button>
+            </form>
+
+        </div>
+
+        <div class= "col s4 container" id="lists">
+            <h3>Devoured Burgers</h3>
+
+          <div class ="container names" id="devoured">
+
+            <ul>
+            {{#each burgers}}
+                {{#if devoured = true}}
+                {{> burgers/burger-block showbutton=false}}
+                {{/if}}
+            {{/each}}
+            </ul>
+
+          </div>
+
+          {{!-- <button class="btn change" id="devour">Valar Dohaeris</button> --}}
+            
+        </div>
+
+    </div>
+</div>
+
+
