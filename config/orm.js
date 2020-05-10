@@ -37,7 +37,7 @@ function objToSql(ob) {
 
 
 var orm = {
-    //queries database for all burgers that are true and all that are false? to display the two lists
+    //queries database for all burgers to display the two lists
     selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";        
         connection.query(queryString, function (err, result) {

@@ -19,25 +19,22 @@ router.get("/", function (req, res) {
 
 //route to create a new burger instance
 router.post("/api/burgers", function (req, res) {
-  burger.insertOne(["burger_name", "not_devoured"], [req.body.burger_name, req.body.devoured
+  burger.insertOne(["burger_name", "devoured"], [req.body.name, req.body.devoured
   ], function (result) {
     // Send back the ID of the new burger
     res.json({ id: result.insertId });
   });
 });
-
-//route to change the burger not_devoured from true to fals
-// router.put("/api/burgers/:id", function(req, res) {
-//   var condition = "id = " + req.param.id;
-
-router.put("/api/burgers", function (req, res) {
-  var condition = "id = " + req.body.id;
+//route to change devoured from false to true
+router.put("/api/burgers/:id", function (req, res) {
+  console.log(req)
+  var condition = "id = " + req.param.id;
 
   console.log("condition", condition);
 
   burger.updateOne(
     {
-      not_devoured: req.body.not_devoured
+      devoured: req.body.devoured
     }, condition, function (result) {
       console.log("BurgCont " + result);
       if (result.affectedRows == 0) {

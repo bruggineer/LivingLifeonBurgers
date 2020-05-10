@@ -1,96 +1,65 @@
-{{!-- <h1>Eat-Da-Burger!</h1>
-
-{{!-- list of burgers to devour --}}
-<h2>Burgers to Devour</h2>
-<ul>
-  {{#each burgers}}
-    {{#unless devour}}
-      {{this.burgers}}
-      <button data-id="{{this.id}}" class="delquote">Devour!</button>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-{{!-- list of devoured burgers --}}
-<h2>Devoured Burgers</h2>
-<ul>
-  {{#each burger}}
-    {{#if devour}}
-      {{this.burgers}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-{{!-- for to enter new burger --}}
-<form class="create-form">
-  <div class="form-group">
-    <input type="textbox" id="ca" name="burger_name">
-  </div>
-  <button type="submit">Submit</button>
-  <h2>Enter a Burger you want to eat! Click the "Submit" button.</h2>
-</form> --}}
-
 <div class="container" id="main-box">
-    <div class="row">
-        <div class ="col s12 title" id= "title-box">
-            <hr>
-            <h1 id="subtitle">Living life, devouring burgers.</h1>
-        </div>
+  <div class="row">
+    <div class="col s12 title" id="title-box">
+      <hr>
+      <h1 id="subtitle">Living life devouring burgers.</h1>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col s4 container" id="lists">
+      <h3>Burgers to Devour</h3>
+      <div class="container names" id="not-eaten">
+
+        
+          {{#each burgers}}
+          
+            {{#unless devoured}}
+            <li class="row name-button" id={{id}} data-newdevour=true>
+            <span class="col-9 pull-left">{{burger_name}}</span>
+            <button class="col-3 btn change pull-right">Devour!</button>
+            </li>
+            {{/unless}}
+          
+          {{/each}}
+        
+
+      </div>
     </div>
 
-    <div class="row">
+    <div class="col s4" id="mid-section">
 
-        <div class= "col s4 container" id="lists">
-          <h3>Burgers to Devour</h3>
-          <div class ="container names" id="not-eaten">
+      <form class="create-form">
+        <h3>Add Burgers</h3>
+        <p>Burgers you are dying to devour!</p>
 
-            <ul>
-              {{#each burgers}}
-                {{#unless devoured}}
-                {{> burgers/burger-block showbutton=true}}
-                {{/unless}}
-              {{/each}}
-            </ul>
-
-          </div>
+        <div class="form-group">
+          <label for="burger"></label>
+          <input type="text" id="burger" placeholder="Name your burger" name="burger_name">
         </div>
 
-        <div class="col s4" id="mid-section">
-            {{!-- <img src="assets/images/jaqen.png" id="jaqen"> --}}
-
-
-            <form class="create-form">
-
-            <div class="form-group">
-                <label for="burger"></label>
-                <input type="text" id="burger" placeholder="Name your burger" name="burger_name">
-            </div>
-
-            <button type="submit">Add a Burger to Devour</button>
-            </form>
-
-        </div>
-
-        <div class= "col s4 container" id="lists">
-            <h3>Devoured Burgers</h3>
-
-          <div class ="container names" id="devoured">
-
-            <ul>
-            {{#each burgers}}
-                {{#if devoured = true}}
-                {{> burgers/burger-block showbutton=false}}
-                {{/if}}
-            {{/each}}
-            </ul>
-
-          </div>
-
-          {{!-- <button class="btn change" id="devour">Valar Dohaeris</button> --}}
-            
-        </div>
+        <button type="submit">Add to List</button>
+      </form>
 
     </div>
+
+    <div class="col s4 container" id="lists">
+      <h3>Devoured Burgers</h3>
+
+      <div class="container names" id="devoured">
+
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          <span class="col s12">{{burger_name}}</span>
+          {{/if}}
+          {{/each}}
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>
-
-
