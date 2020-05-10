@@ -1,9 +1,10 @@
 body {
-    background-image: url("../img/shaggy.JPG");
+    background-image: url("../img/fiona-calisti-367cMAtZ3qA-unsplash.jpg");
     background-attachment: fixed;
-    background-position: bottom left;
+    background-size: cover;
     background-repeat: no-repeat;
-    color: rgb(62, 30, 40);
+    color:whitesmoke;
+    background-color: rgb(93,49,49);
 }
 
 #title-box {
@@ -18,7 +19,7 @@ body {
 }
 
 #subtitle {
-    color: rgb(62, 30, 40);
+    color:whitesmoke;
     font-family: 'Arial', sans-serif;
 }
 
@@ -28,14 +29,14 @@ padding-top: 25%;
 
 #lists {
     text-align: center;
-    color:rgb(62, 30, 40);
+    color:whitesmoke;
     /* padding: 0; */
     margin: 0;
 }
 
 .names {
     /*height: 450px;*/
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(93,49,49);
     margin-top: 20px;
     font-size: 1rem;
     padding: 0;
@@ -52,8 +53,8 @@ padding-top: 25%;
 
 .btn {
     font-size: .75rem;
-    border-color: rgb(163, 87, 87);
+    border-color: rgb(93,49,49);
     border-style: groove;
-    color:rgb(62, 30, 40); 
+    color:whitesmoke;
 
 }
