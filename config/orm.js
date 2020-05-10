@@ -79,7 +79,7 @@ var orm = {
 
         console.log(queryString);
         connection.query(queryString, function(err, result) {
-            console.log(query.sql)
+          
             if (err) {
                 throw err;
             }

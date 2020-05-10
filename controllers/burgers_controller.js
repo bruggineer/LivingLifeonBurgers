@@ -28,7 +28,7 @@ router.post("/api/burgers", function (req, res) {
 //route to change devoured from false to true
 router.put("/api/burgers/:id", function (req, res) {
   console.log(req)
-  var condition = "id = " + req.param.id;
+  var condition = "id = " + req.body.id;
 
   console.log("condition", condition);
 

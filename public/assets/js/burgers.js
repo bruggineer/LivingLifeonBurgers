@@ -16,7 +16,7 @@ $(function () {
     };
     console.log(changeDevour)
 
-    $.ajax("/api/burgers/:" + id, {
+    $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: changeDevour
     }).then(function () {
