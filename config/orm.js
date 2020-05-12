@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("./connection.js");
+var connection = require("./connection");
 
 // Helper function for SQL syntax.
 // creates an array of question marks and then converts them into a placeholder string

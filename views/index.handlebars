@@ -1,64 +1,53 @@
+{{!-- header area --}}
 <div class="container" id="main-box">
   <div class="row">
-    <div class="col s12 title" id="title-box">
+    <div class="col title" id="title-box">
       <hr>
-      <h1 id="subtitle">Living life devouring burgers.</h1>
+      <h1 id="subtitle">Living life on burgers.</h1>
     </div>
   </div>
 
+{{!-- main body in three columns --}}
   <div class="row">
-
-    <div class="col s4 container" id="lists">
+    {{!-- first column- list of burgers to eat --}}
+    <div class="col-md-4 container">
       <h2>Burgers to Devour</h2>
-      <div class="container names" id="not-eaten">
-
-        
-          {{#each burgers}}
-          
-            {{#unless devoured}}
+      <div class="container names">
+        {{#each burgers}}
+          {{#unless devoured}}
             <li class="row name-button" id={{id}} data-newdevour=true>
-            <span class="col-9 pull-left">{{burger_name}}</span>
-            <button class="col-3 btn change pull-right">Devour!</button>
+                <span class="col-8 pull-left">{{burger_name}}</span>
+                <button class="col-4 btn change pull-right">Devour!</button>
             </li>
-            {{/unless}}
-          
-          {{/each}}
-        
-
+          {{/unless}}
+        {{/each}}
       </div>
     </div>
 
-    <div class="col s4" id="mid-section">
-
+    {{!-- //middle column - add a burger to add form --}}
+    <div class="col-md-4 container" id="mid-section">
       <form class="create-form">
-        <h2>Add Burgers</h2>
-        <h3>Burgers you are dying to devour!</h3>
+        <h3>ADD Burgers you are dying to devour!</h3>
         <div class="form-group">
-          <label for="burger"></label>
-          <input type="text" id="burger" placeholder="Name your burger" name="burger_name">
+          <input type="text" id="burger" placeholder="Name of Burger" name="burger_name">
         </div>
-
-        <button type="submit">Add to List</button>
+        <button type="submit" class= "btn">Add to List</button>
       </form>
-
     </div>
 
-    <div class="col s4 container" id="lists">
+    {{!-- last column- list of burgers eaten --}}
+    <div class="col-md-4 container">
       <h2>Devoured Burgers</h2>
-
-      <div class="container names" id="devoured">
-
-        <ul>
-          {{#each burgers}}
+      <div class="container names">
+        {{#each burgers}}
           {{#if devoured}}
-          <span class="col s12">{{burger_name}}</span>
+            <li class="row name-button" id={{id}} data-newdevour=false>
+              <span class="col-12">{{burger_name}}</span>
+              <button class="btn change pull-right" style="display: none;">Devour!</button>
+            </li>
           {{/if}}
-          {{/each}}
-        </ul>
-
+        {{/each}}
       </div>
-
     </div>
-
-  </div>
-</div>
+  </div> <!--end of row2-->
+</div> <!-- end of container-->
