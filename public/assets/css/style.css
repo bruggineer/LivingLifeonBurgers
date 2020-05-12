@@ -28,14 +28,15 @@ body {
 }
 
 #mid-section {
-padding-top: 20%;
+margin: 10% 0;
 }
 
-.names {
-    background-color: rgb(93,49,49);
+.lists {
+    background-color: rgb(93,49,49,0.5);
     border-style: solid;
     border-radius: 5px;
-    border-color: black;
+    border-width: .05rem;
+    border-color: rgb(38,11,10);
     margin-top: 20px;
     font-size: 1.25rem;
     padding: 0;
@@ -45,14 +46,20 @@ padding-top: 20%;
     font-family: 'Arial', sans-serif;
     text-align: left;
     width: 100%;
-    margin:0;
-    padding: 10px 0pxc;
+    height: 60px;
+    margin: 0;
+    padding: 10px 15px;
+}
+
+.name {
+    padding: 0 5px 0 0;
 }
 
 .btn {
     font-size: .75rem;
-    border-color: rgb(93,49,49);
-    border-style: groove;
+    border-color: rgb(38,11,10);
+    border-style: solid;
     border-width: medium;
     color:whitesmoke;
+    height: 100%;
 }

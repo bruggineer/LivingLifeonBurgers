@@ -10,13 +10,13 @@
 {{!-- main body in three columns --}}
   <div class="row">
     {{!-- first column- list of burgers to eat --}}
-    <div class="col-md-4 container">
+    <div class="col-lg-4 container">
       <h2>Burgers to Devour</h2>
-      <div class="container names">
+      <div class="container lists">
         {{#each burgers}}
           {{#unless devoured}}
             <li class="row name-button" id={{id}} data-newdevour=true>
-                <span class="col-8 pull-left">{{burger_name}}</span>
+                <span class="col-8 pull-left name">{{burger_name}}</span>
                 <button class="col-4 btn change pull-right">Devour!</button>
             </li>
           {{/unless}}
@@ -25,9 +25,9 @@
     </div>
 
     {{!-- //middle column - add a burger to add form --}}
-    <div class="col-md-4 container" id="mid-section">
+    <div class="col-lg-4 container" id="mid-section">
       <form class="create-form">
-        <h3>ADD Burgers you are dying to devour!</h3>
+        <h3>Add Burgers you are dying to devour!</h3>
         <div class="form-group">
           <input type="text" id="burger" placeholder="Name of Burger" name="burger_name">
         </div>
@@ -36,13 +36,13 @@
     </div>
 
     {{!-- last column- list of burgers eaten --}}
-    <div class="col-md-4 container">
+    <div class="col-lg-4 container">
       <h2>Devoured Burgers</h2>
-      <div class="container names">
+      <div class="container lists">
         {{#each burgers}}
           {{#if devoured}}
             <li class="row name-button" id={{id}} data-newdevour=false>
-              <span class="col-12">{{burger_name}}</span>
+              <span class="col-12 name">{{burger_name}}</span>
               <button class="btn change pull-right" style="display: none;">Devour!</button>
             </li>
           {{/if}}
