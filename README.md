@@ -1,4 +1,4 @@
-# burger
+# Living life on burgers...
 Full Stack Application for tracking burgers.
 Users can enter burgers they want to eat by name and see those burgers on the "Burgers to Devour" list.
 Users can move the burgers from the ".. to Devour" list to the "Burgers Devoured" by clicking the "Devour!" button.
